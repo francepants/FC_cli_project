@@ -1,0 +1,8 @@
+#!/usr/bin/env ruby 
+
+require_relative "../lib/environment"
+
+# API.get_activities
+
+cli = CLI.new
+cli.run
