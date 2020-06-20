@@ -39,6 +39,7 @@ class CLI
             sleep 2
             print_activities
             puts ""
+            puts "Menu:"
             puts "To go back and generate 10 new ideas, type \"back\"."
             puts "To exit, type \"kbye\"."
             puts ""
