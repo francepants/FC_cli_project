@@ -6,9 +6,9 @@ Gem::Specification.new do |spec|
   spec.authors       = ["francepants"]
   spec.email         = ["franceline90@gmail.com"]
 
-  spec.summary       = %q{TODO: Write a short summary, because RubyGems requires one.}
-  spec.description   = %q{TODO: Write a longer description or delete this line.}
-  spec.homepage      = "TODO: Put your gem's website or public repo URL here."
+  spec.summary       = %q{A random assortment of activities will generate.}
+  spec.description   = %q{Bored? Don't know what do to? This here will generate a list 1-10 (or more if you wish) of random activities to do.}
+  spec.homepage      = "https://github.com/francepants/FC_cli_project"
   spec.license       = "MIT"
   spec.required_ruby_version = Gem::Requirement.new(">= 2.3.0")
 

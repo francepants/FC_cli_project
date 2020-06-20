@@ -9,7 +9,7 @@ class API
     def self.get_activities
         i = 0 
         loop do
-            i += 1
+            i += 1 
                 response = RestClient.get(BASE_URL + "activity") 
                 data = JSON.parse(response)
                 activity = data["activity"]

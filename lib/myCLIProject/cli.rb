@@ -5,16 +5,15 @@ class CLI
         puts "|__| |  |  |\\/| |  \\ |__) |  |  |\\/| "
         puts "|  | \\__/  |  | |__/ |  \\ \\__/  |  | "
         puts ""
-        puts "adjective. cool way to say bored."
+        puts "adjective. a cool way to say bored."
         puts ""
         sleep 2
-        puts "Hey, you must be bored! \nWell bored, I'm Humdrum, the cure for your bummer summers."
+        puts "Hey, you must be Bored! \nWell Bored, I'm Humdrum, the cure for your bummer summers and all dull things alike."
+        sleep 1
+        puts "Here, we'll gather some enjoyable activities for you to try out."
         puts ""
         sleep 2
-        puts "\"The cure for boredom is curiosity. \n - Dorothy Parker\""
-        puts ""
-        sleep 2
-        puts "Please wait a moment while we gather some info."
+        puts "Please allow us a moment while they load..."
         puts "~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~"
         API.get_activities
         puts ""
@@ -26,7 +25,7 @@ class CLI
     def print_main_menu
         puts ""
         puts "Menu:"
-        puts "Type \"blah\" for a list of things to do."
+        puts "Type \"list\" for a list of things to do."
         puts "Type \"kbye\" to exit."
         puts "~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~"
         main_menu
@@ -34,17 +33,18 @@ class CLI
 
     def main_menu
         input = gets.strip.downcase
-        if input == "blah"
+        if input == "list"
             puts ""
-            puts "You typed blah. Here are some ideas!"
+            puts "You typed \"list\". Here are some ideas!"
+            sleep 2
             print_activities
             puts ""
-            #ask if they want to go back / input / use if statement
-            puts "To go back and get 10 new ideas, type \"back\"."
+            puts "To go back and generate 10 new ideas, type \"back\"."
             puts "To exit, type \"kbye\"."
             puts ""
             b_input = gets.strip.downcase
             if b_input == "back"
+                puts "Please allow us one moment to gather some new ideas..."
                 new_options
                 print_main_menu
             elsif b_input == "kbye"
@@ -62,16 +62,15 @@ class CLI
     end
 
     def print_activities
-        #want this to show a list #1 - #10 of the random activity, type, participants
-        # Ideas 1: lists them 
-        # objectid = "#{k}"
+
         puts "~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~"
-        Activities.all.each.with_index(1) do |k, i|
+        Activities.all.each.with_index(1) do |o, i|
             puts ""
             puts "Idea ##{i}: "
-            puts "You should: #{k.activity}"
-            puts "Activity type: #{k.type}"
-            puts "Participant(s): #{k.participants}"
+            puts "You should: #{o.activity}"
+            puts "Activity type: #{o.type}"
+            puts "Participant(s): #{o.participants}"
+            sleep 0.2
         end
     end
 
@@ -81,12 +80,13 @@ class CLI
 
     def invalid_input
         puts ""
-        puts "Huh? Please try again."
+        puts "Hmm, I didn't get that. Please try again."
         puts ""
     end
 
     def kbye
         puts ""
+        # puts "Remember - \"The cure for boredom is curiosity. \n - Dorothy Parker\""
         puts "K bye! Go have some fun!"
         puts ""
         exit
