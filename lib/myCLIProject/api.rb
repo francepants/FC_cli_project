@@ -1,9 +1,5 @@
 class API
 
-    # def intialize 
-    #     @data = {}
-    # end
-
     BASE_URL = "https://www.boredapi.com/api/"
 
     def self.get_activities
